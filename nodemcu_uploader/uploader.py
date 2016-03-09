@@ -229,7 +229,7 @@ class Uploader(object):
             log.error('Error waiting for esp "%s"', res)
             return
         log.debug('sending destination filename "%s"', destination)
-        self.write(destination + '\x00', True)
+        self.write(destination + '\x01', True)
         if not self.got_ack():
             log.error('did not ack destination filename')
             return
